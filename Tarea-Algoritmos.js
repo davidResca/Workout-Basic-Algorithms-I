@@ -196,3 +196,22 @@ function hallarNumeroMaximoDelConjunto(){
 }
  
 console.log(`El numero máximo del Array es ${hallarNumeroMaximoDelConjunto()}`);
+
+/*
+Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
+
+Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
+El resultado debería ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+*/
+
+const fibonacci = [0,1];
+
+function imprimirDigitosSerieFibonacci(){
+  for(i = 2; i <= 10; i++) {
+    fibonacci.push(fibonacci [i-1] + fibonacci [i-2]);
+  }
+  console.log(fibonacci);
+}
+
+imprimirDigitosSerieFibonacci();
+
