@@ -22,7 +22,7 @@ for (i = 1; i <= 10; i++) {
 for (i = 1; i <= 100; i++) {
   if(i% 2 === 1) {
     console.log(i)
-  } else {};
+  };
 };
   
 /*
@@ -121,23 +121,23 @@ console.log(`La suma de numeros impares > 10 y > 30 es; ${sumarNumerosImpares()}
 Desafío de programación #8: Crea una función que convierta de Celsius a Fahrenheit
 */
 
-function conversionCelsiusFarenheit (){
-  let gradosCelsius = Number(prompt('Ingrese el valor que desea convertir a F°'));
-  let resultadoConversion = gradosCelsius * 1.8 + 32;
-  return resultadoConversion;
+let gradosCelsius = Number(prompt('Ingrese el valor que desea convertir a F°'));
+
+function convertirCelsiusAFarenheit(){
+    return gradosCelsius * 1.8 + 32;
 }
-console.log(`${conversionCelsiusFarenheit()} F°`);
+console.log(`${convertirCelsiusAFarenheit()} F°`);
 
 /*
 Desafío de programación #9: Crea una función que convierta de Fahrenheit a Celsius
 */
 
-function conversionFarenheitCelsius(){
-  let gradosFarenheit = Number(prompt('Ingrese el valor que desea convertir a C°'));
-  let resultadoConversion = (gradosFarenheit - 32) / 1.8
-  return resultadoConversion
+let gradosFarenheit = Number(prompt('Ingrese el valor que desea convertir a C°'));
+
+function convertirFarenheitACelsius(){
+  return (gradosFarenheit - 32) / 1.8;
 }
-console.log(`${conversionFarenheitCelsius()} C°`);
+console.log(`${convertirFarenheitACelsius()} C°`);
 
 /*
 Desafío de programación #10: Calcula la suma de todos los números en un array de números
