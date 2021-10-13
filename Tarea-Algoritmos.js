@@ -1,8 +1,10 @@
+//Link original y créditos a https://github.com/CodeGuppyPrograms/CodingChallenges (contiene las respuestas).
 
-// TAREAS DE ALGORITMOS - NIVEL PRINCIPIANTE - CURSO r-ARGENTINA PROGRAMA
-
-
-
+/*
+Estos desafíos de coding están enfocados para los principiantes, por lo tanto las soluciones 
+fueron implementadas
+usando  elementos de programación simples y clásicos.
+*/
 
 /*
 Desafío de programación #1: Imprimí los números del 1 al 10
@@ -115,7 +117,7 @@ function sumarNumerosImpares() {
   return sumaImpares;
 }
 
-console.log(`La suma de numeros impares > 10 y > 30 es; ${sumarNumerosImpares()}`);
+console.log(`La suma de numeros impares > 10 y < 30 es; ${sumarNumerosImpares()}`);
 
 /*
 Desafío de programación #8: Crea una función que convierta de Celsius a Fahrenheit
@@ -141,10 +143,11 @@ console.log(`${convertirFarenheitACelsius()} C°`);
 
 /*
 Desafío de programación #10: Calcula la suma de todos los números en un array de números
+*/
 
-// Hecho en #5
+console.log(`La suma de los numeros del Array es ${calcularSumaNumeros()}`);
 
-
+/*
 Desafío de programación #11: Calcula el promedio de todos los números en un array de números. (en una función)
 */
 
@@ -204,6 +207,7 @@ Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
 El resultado debería ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
 */
 
+
 const fibonacci = [0,1];
 
 function imprimirDigitosSerieFibonacci(){
@@ -214,4 +218,43 @@ function imprimirDigitosSerieFibonacci(){
 }
 
 imprimirDigitosSerieFibonacci();
+
+/*
+Desafío de programación #15: Crear una función que encuentre el número n de Fibonacci usando recursión
+*/
+
+let n = Number(prompt("Qué n fibonacci desea encontrar?"));
+
+function findFibonacci(n){
+  if (n <= 0){
+    return 0;
+  } else if (n === 1){
+    return 1;
+  } else {
+    return findFibonacci(n - 1) + findFibonacci(n - 2);
+  }
+}
+
+console.log(findFibonacci(n));
+
+/*
+Desafío de programación #16: Crear una función que dado un número retorne un Boolean (true/false) 
+dependiendo si es primo o no.
+*/
+
+const numeroUsuario = Number(prompt('ingrese numero'));
+
+function determinarSiEsPrimo(num) {
+  for(let i = 2; i < num; i++){    
+    if(num % i === 0 ) {
+      return false;
+    } else if (num % i !== 1) {
+      return true;
+    };
+  };
+
+  return num !== 1;
+};
+
+console.log(determinarSiEsPrimo(numeroUsuario));
 
