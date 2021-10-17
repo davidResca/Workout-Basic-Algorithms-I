@@ -258,3 +258,25 @@ function determinarSiEsPrimo(num) {
 
 console.log(determinarSiEsPrimo(numeroUsuario));
 
+
+/*
+Desafío de programación #17: Calcular la suma de los dígitos positivos de un número entero positivo
+Ejemplo:
+   123 = 1 + 2 + 3 = 6
+   2 = 2
+   1234 = 1 + 2 + 3 + 4 = 10
+*/
+
+const numeroTotal = prompt('Ingrese Numero para descomponer y sumar sus digitos');
+
+function sumarDigitosInternosDelNumero(num){
+  let resultado = 0;
+  for(let i = 0; i < num.length; i++){
+    let resultadoParcial = Number(numeroTotal[i]);
+    resultado = resultado + resultadoParcial; 
+  }
+  
+  return resultado;
+}
+
+console.log(`La suma de los dígitos es ${sumarDigitosInternosDelNumero(numeroTotal)}`)
