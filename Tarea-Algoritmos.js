@@ -279,4 +279,67 @@ function sumarDigitosInternosDelNumero(num){
   return resultado;
 }
 
-console.log(`La suma de los dígitos es ${sumarDigitosInternosDelNumero(numeroTotal)}`)
+console.log(`La suma de los dígitos es ${sumarDigitosInternosDelNumero(numeroTotal)}`);
+
+
+//Desafío de programación #18: Imprimir los primeros 100 números primos
+
+function imprimirNumerosPrimos(){
+  const acumuladorNumerosPrimos = []; // Array en el que se imprimen los números primos.
+  let contadorNumerosPrimos = 100; // contador que decrecerá en 1 cada vez que se ingrese un elemento en el acumulador.
+  let num = 2; // variable/contador que representa los números que serán chequeados como n primos o no.
+
+  while(contadorNumerosPrimos > 0){ // 
+    let j = 0; // sirve para comprobar la condición necesaria para imprimir los n primos en el array. (vuelve a 0 cada vez que vuelve a iniciar el bucle while)
+    for(let i = 2; i < num; i++){ //comprueba los divisores entre 2 y num - 1. (si alguno da num % 1 === 0, el num en cuestión es compuesto, no queremos que se imprima).
+      if (num % i === 0){
+        j++;  //  si el bucle for se comprueba verdadero, es decir (num % i === 0), j suma 1(let j = 1). ***
+      };
+    };
+
+    if(j === 0){ // ***  Si esta condición es verdadera, el algoritmo imprime el num analizado en el array de n Primos. 
+      acumuladorNumerosPrimos.push(num) // La variable j será === 0 sólo si la condición del -if- dentro del bucle 
+      contadorNumerosPrimos--; // -for- resulta falsa (es decir, num % i !== 0), ya que, en ese caso no se efectuaría: j++.
+    };                        // Finalmente, si se cumple esta condición: hace un push en acumuladorNumerosPrimos y descuenta uno en contadoNumerosPrimos-- (UNO MENOS A IMPRIMIR!).  
+    num++; //Una vez terminada la comprobación, actualiza el contador num para chequear un num nuevo (numerador nuevo).
+  };
+
+  return acumuladorNumerosPrimos; // La función retorna el array con los datos almacenados.
+};
+
+
+console.log(imprimirNumerosPrimos());
+
+
+
+/*
+Desafío de programación #19: Crear una función que retorne un array con los primeros números 
+"n-primos" mayores que un número particular definido "alComienzo"
+
+Ejemplo:
+  Quiero los primeros 4 números primos mayores que 5, el resultado debería ser: [7,11,13,17,19]
+*/
+
+
+function printNextPrimeNumbers(){
+  const primeNumberArray = [];
+  let nextNumbersCountdown = 4;
+  let number = 5;
+
+  while(nextNumbersCountdown > 0){
+    let j = 0;
+    for(let i = 2; i < number; i++){
+      if(number % i === 0){
+        j++;
+      };
+    };
+    if(j === 0){
+      primeNumberArray.push(number);
+      nextNumbersCountdown--;
+    };
+    number++;
+  };
+  return primeNumberArray;
+};
+
+console.log(printNextPrimeNumbers());
